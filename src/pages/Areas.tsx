@@ -4,7 +4,7 @@ import { AreaCard } from '../components/AreaCard';
 import './Areas.css';
 
 export function Areas() {
-  const { t, locale } = useLanguage();
+  const { locale } = useLanguage();
 
   return (
     <main className="areas-page">
