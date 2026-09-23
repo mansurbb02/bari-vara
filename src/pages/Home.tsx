@@ -13,7 +13,6 @@ export function Home() {
 
   return (
     <main className="home">
-      {/* 02 Hero + Search — full-width background, centered content */}
       <section className="hero">
         <div
           className="hero__bg"
@@ -79,7 +78,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 03 Popular Dhaka Areas */}
       <section className="section">
         <div className="container">
           <div className="section__header">
@@ -94,7 +92,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 04 Verified Properties */}
       <section className="section section--alt">
         <div className="container">
           <div className="section__header">
@@ -109,7 +106,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 05 What kind of home */}
       <section className="section">
         <div className="container">
           <h2 className="section__title font-heading" style={{ marginBottom: 24 }}>
@@ -131,7 +127,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 06 Tenant Requirement CTA — full-bleed editorial band */}
       <section className="cta-band">
         <div className="container">
           <div className="cta-band__inner">
@@ -153,49 +148,18 @@ export function Home() {
         </div>
       </section>
 
-      {/* 07 How Verification Works */}
-      <section className="section">
-        <div className="container">
-          <div className="section__intro">
-            <h2 className="section__title font-heading">{t('how_verification_works')}</h2>
-            <p className="section__lead font-body">
-              {locale === 'bn'
-                ? 'বাসা নেওয়ার আগে কোন তথ্য যাচাই করা হয়েছে — পরিষ্কার করে দেখুন।'
-                : 'See clearly what has been verified before you rent.'}
-            </p>
-          </div>
-          <div className="trust-steps">
-            <div className="trust-step">
-              <div className="trust-step__num">১</div>
-              <h3 className="trust-step__title font-heading">{t('trust_step1_title')}</h3>
-              <p className="trust-step__desc font-body">{t('trust_step1_desc')}</p>
-            </div>
-            <div className="trust-step">
-              <div className="trust-step__num">২</div>
-              <h3 className="trust-step__title font-heading">{t('trust_step2_title')}</h3>
-              <p className="trust-step__desc font-body">{t('trust_step2_desc')}</p>
-            </div>
-            <div className="trust-step">
-              <div className="trust-step__num">৩</div>
-              <h3 className="trust-step__title font-heading">{t('trust_step3_title')}</h3>
-              <p className="trust-step__desc font-body">{t('trust_step3_desc')}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 08 How It Works — process timeline */}
       <section className="section section--process">
         <div className="container">
-          <div className="section__intro">
+          <header className="process-header">
             <h2 className="section__title font-heading">{t('how_it_works')}</h2>
-            <p className="section__lead font-body">
+            <p className="process-header__lead font-body">
               {locale === 'bn'
                 ? 'পাঁচটি সহজ ধাপে আপনার নতুন বাসা খুঁজে নিন।'
                 : 'Find your next home in five simple steps.'}
             </p>
-          </div>
-          <div className="process">
+          </header>
+
+          <ol className="process-list">
             {[
               {
                 num: '01',
@@ -222,24 +186,28 @@ export function Home() {
                 title: t('step5'),
                 desc: locale === 'bn' ? 'শর্তাবলী বুঝে ভাড়া নিন।' : 'Understand terms and rent.',
               },
-            ].map((s, i) => (
-              <div key={s.num} className="process__item">
-                <div className="process__marker">
-                  <span className="process__num font-heading">{s.num}</span>
-                  {i < 4 && <span className="process__line" aria-hidden="true" />}
+            ].map((s) => (
+              <li key={s.num} className="process-list__item">
+                <span className="process-list__num font-heading" aria-hidden="true">
+                  {s.num}
+                </span>
+                <div className="process-list__body">
+                  <h3 className="process-list__title font-heading">{s.title}</h3>
+                  <p className="process-list__desc font-body">{s.desc}</p>
                 </div>
-                <div className="process__body">
-                  <h3 className="process__title font-heading">{s.title}</h3>
-                  <p className="process__desc font-body">{s.desc}</p>
-                </div>
-              </div>
+              </li>
             ))}
+          </ol>
+
+          <div className="process-footer">
+            <Link to="/how-it-works" className="section__link">
+              {locale === 'bn' ? 'বিস্তারিত দেখুন' : 'Learn more'} →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 09 Recently Added */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <div className="section__header">
             <h2 className="section__title font-heading">{t('recently_added')}</h2>
@@ -253,106 +221,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 10 Rental Tips */}
-      <section className="section section--alt">
-        <div className="container">
-          <h2 className="section__title font-heading" style={{ marginBottom: 24 }}>
-            {t('rental_tips')}
-          </h2>
-          <div className="tips">
-            <article className="tip">
-              <h3 className="tip__title font-heading">
-                {locale === 'bn' ? 'ভাড়া আগে থেকে জানুন' : 'Know the rent upfront'}
-              </h3>
-              <p className="tip__text font-body">
-                {locale === 'bn'
-                  ? 'মাসিক ভাড়া ছাড়াও ইউটিলিটি ও অন্যান্য খরচ জেনে নিন।'
-                  : 'Ask about utilities and extra costs beyond the monthly rent.'}
-              </p>
-            </article>
-            <article className="tip">
-              <h3 className="tip__title font-heading">
-                {locale === 'bn' ? 'যাচাই দেখুন' : 'Check verification'}
-              </h3>
-              <p className="tip__text font-body">
-                {locale === 'bn'
-                  ? 'বাসা দেখতে যাওয়ার আগে কোন তথ্য যাচাই করা হয়েছে দেখুন।'
-                  : 'See what has been verified before you visit.'}
-              </p>
-            </article>
-            <article className="tip">
-              <h3 className="tip__title font-heading">
-                {locale === 'bn' ? 'শর্ত পড়ুন' : 'Read the terms'}
-              </h3>
-              <p className="tip__text font-body">
-                {locale === 'bn'
-                  ? 'অগ্রিম, সিকিউরিটি ও চুক্তির শর্তাবলী ভালো করে বুঝে নিন।'
-                  : 'Understand advance, security and agreement terms carefully.'}
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* 11 FAQ — two-column editorial layout */}
-      <section className="section section--faq">
-        <div className="container">
-          <div className="faq-layout">
-            <div className="faq-layout__intro">
-              <h2 className="section__title font-heading">{t('faq')}</h2>
-              <p className="section__lead font-body">
-                {locale === 'bn'
-                  ? 'সবচেয়ে বেশি জিজ্ঞাসা করা প্রশ্নগুলোর উত্তর।'
-                  : 'Answers to the questions people ask most.'}
-              </p>
-            </div>
-            <div className="faq">
-              <details className="faq__item">
-                <summary className="faq__q font-heading">
-                  {locale === 'bn' ? 'যাচাই করা মানে কী?' : 'What does verified mean?'}
-                </summary>
-                <p className="faq__a font-body">
-                  {locale === 'bn'
-                    ? 'আমরা বাড়িওয়ালার তথ্য, ঠিকানা, ভাড়া ও খালি আছে কিনা যাচাই করে থাকি।'
-                    : 'We verify owner details, address, rent and current availability.'}
-                </p>
-              </details>
-              <details className="faq__item">
-                <summary className="faq__q font-heading">
-                  {locale === 'bn' ? 'এই ওয়েবসাইট কি ফ্রি?' : 'Is this website free?'}
-                </summary>
-                <p className="faq__a font-body">
-                  {locale === 'bn'
-                    ? 'মূল তালিকা দেখা ফ্রি। বিস্তারিত যাচাই ও যোগাযোগের জন্য প্ল্যান নিতে পারেন।'
-                    : 'Browsing the main list is free. Plans unlock verified details and contact.'}
-                </p>
-              </details>
-              <details className="faq__item">
-                <summary className="faq__q font-heading">
-                  {locale === 'bn' ? 'বাসা দেখতে কীভাবে যাব?' : 'How do I visit a home?'}
-                </summary>
-                <p className="faq__a font-body">
-                  {locale === 'bn'
-                    ? 'বাসা পেজে “বাসা দেখতে চাই” বাটনে চাপুন। বাড়িওয়ালা/এজেন্টের সাথে সময় ঠিক করুন।'
-                    : 'Tap “Request a viewing” on the property page and arrange a time with the owner.'}
-                </p>
-              </details>
-              <details className="faq__item">
-                <summary className="faq__q font-heading">
-                  {locale === 'bn' ? 'ভাড়া ছাড়া আর কী খরচ হয়?' : 'What other costs are there?'}
-                </summary>
-                <p className="faq__a font-body">
-                  {locale === 'bn'
-                    ? 'অগ্রিম, সিকিউরিটি ও ইউটিলিটি সাধারণত আলাদা। প্রতিটি বাসার পেজে আনুমানিক খরচ দেখানো হয়।'
-                    : 'Advance, security and utilities are usually separate. Each listing shows estimated costs.'}
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 12 Support CTA */}
       <section className="cta-band cta-band--support">
         <div className="container">
           <div className="cta-band__inner">
