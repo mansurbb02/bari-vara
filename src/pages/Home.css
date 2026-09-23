@@ -205,8 +205,9 @@
   background: var(--color-soft-green);
   color: var(--color-text);
   border-top: 1px solid var(--color-soft-green-border);
-  border-bottom: 1px solid var(--color-soft-green-border);
+  border-bottom: none;
   padding: 48px 0;
+  margin-bottom: 0;
 }
 .cta-band__inner {
   display: flex;
