@@ -1,0 +1,32 @@
+.areas-page {
+  padding: 32px 0 80px;
+}
+
+.areas-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.areas-subtitle {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .areas-title {
+    font-size: 36px;
+  }
+
+  .areas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}

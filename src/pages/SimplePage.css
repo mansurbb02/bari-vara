@@ -1,0 +1,90 @@
+.simple-page {
+  padding: 40px 0 80px;
+  min-height: 50vh;
+}
+
+.simple-page__title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.simple-page__content {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 640px;
+  color: var(--color-text);
+}
+
+.simple-page__content p {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .simple-page__title {
+    font-size: 36px;
+  }
+}
+
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 560px;
+}
+
+.how-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.how-step__num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 40px;
+}
+
+.how-step__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.how-step__desc {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.form-input {
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: var(--font-ui);
+  background: var(--color-white);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
